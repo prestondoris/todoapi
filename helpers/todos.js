@@ -13,6 +13,7 @@ exports.getTodos = function(req, res){
 exports.createTodo = function(req, res){
   db.Todo.create(req.body)
   .then(function(newTodo){
+      console.log('new todo', newTodo)
       res.status(201).json(newTodo);
   })
   .catch(function(err){

@@ -1,4 +1,5 @@
 var express = require('express'),
+    cors = require('cors'),
     app = express(),
     port = 1000,
     bodyParser = require('body-parser');
@@ -6,6 +7,7 @@ var express = require('express'),
 var todoRoutes = require("./routes/todos");
 
 app.use(bodyParser.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname +'/public'));
 app.use(express.static(__dirname + '/views'));
